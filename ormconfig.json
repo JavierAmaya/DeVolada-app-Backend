@@ -1,0 +1,27 @@
+{
+ "type": "mssql",
+ "host": "lauramarie.database.windows.net",
+ "port": 1433,
+ "username":"lauramarie",
+ "password":"Aguirre1999&",
+ "database":"IngeneriaSoftware",
+ "options":{
+     "synchronize":true,
+     "logging": false,
+     "encrypt": true,
+     "enableArithAbort": true
+    },
+
+    "entities": [
+     "src/entity/**/*.ts"
+    ],
+
+    "migrations":[
+      "src/migration/**/*.ts"
+    ],
+
+    "subscribers": [
+        "src/subscriber/**/*.ts"
+    ]
+
+}

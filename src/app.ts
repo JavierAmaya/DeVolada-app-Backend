@@ -8,7 +8,7 @@ import {resolve} from "path";
 
 config({"path":resolve(__dirname,"../.env")});
 
-//import {createConnection, Connection} from "typeorm";
+import {createConnection, Connection} from "typeorm";
 
 import {MainController} from './controller/main.controller';
 
@@ -20,7 +20,7 @@ class App{
     constructor(){  
         this.app = express();
         this.setConfig();
-        //this.setDBConnection();
+        this.setDBConnection();
         this.main_controller= new MainController(this.app);
     }
 
@@ -30,11 +30,11 @@ class App{
         this.app.use(cors());
     }
 
-   /* private setDBConnection(){
+    private setDBConnection(){
         createConnection().then(Connection =>{
             console.log("BD connected");
         });
-    }*/
+    }
 
 }
 
